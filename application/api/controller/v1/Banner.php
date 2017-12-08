@@ -7,6 +7,7 @@
  */
 
 namespace app\api\controller\v1;
+use app\api\validate\IDMustBePositiveInt;
 use app\api\validate\TestValidate;
 use think\Validate;
 
@@ -20,26 +21,14 @@ class Banner{
     public function getBanner($id){
 
         $data = [
-          'name'=>'Jessy1111',
-          'email'=>'Jessy@qq.com'
+            'id'   => $id
         ];
-
-//        $validate = new Validate([
-//            'name'  => 'require|max:10',
-//            'email'=>'email'
-//        ]);
-
-//        $result = $validate->batch()->check($data);
-//        var_dump($result);
-//        var_dump($validate->getError());
-
-        $validate = new TestValidate();
-        $result = $validate->batch()->check($data);
+        $validate = new IDMustBePositiveInt();
+        $result = $validate->check($data);
 
         if(!$result){
-            var_dump($validate->getError());
-        }else{
-            var_dump($result);
+            echo $validate->getError();
         }
+
     }
 }
