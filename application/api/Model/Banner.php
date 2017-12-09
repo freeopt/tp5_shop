@@ -9,9 +9,18 @@
 namespace app\api\Model;
 
 
+use think\Exception;
+
 class Banner{
 
     public static function getBannerByID($id){
+        try{
+            1/0;
+        }
+        catch (Exception $e){
+            //TODO:可以记录日志
+            throw $e;
+        }
         return 'banner info for '.$id;
     }
 }
