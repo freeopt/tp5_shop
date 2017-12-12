@@ -9,12 +9,14 @@
 namespace app\lib\exception;
 
 
-class BaseException{
+use think\Exception;
+
+class BaseException extends Exception {
 
     //http status code
-    public $code = '';
+    public $code = 500;
     //error message
     public $msg  = '未知错误';
     //error code
-    public $errorCode = 10000;
+    public $errorCode = 999;
 }
