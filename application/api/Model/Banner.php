@@ -9,10 +9,11 @@
 namespace app\api\Model;
 
 
+use think\Exception;
+
 class Banner{
 
     public static function getBannerByID($id){
-<<<<<<< HEAD
 //        try{
 //            1/0;
 //        }
@@ -23,8 +24,5 @@ class Banner{
 //        return 'banner info for '.$id;
 
         return null;
-=======
-        return 'banner info for '.$id;
->>>>>>> parent of baafd7e... 全局异常处理01
     }
 }

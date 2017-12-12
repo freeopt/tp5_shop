@@ -8,11 +8,8 @@
 
 namespace app\api\controller\v1;
 use app\api\Model\Banner as BannerModel;
-<<<<<<< HEAD
 use app\api\validate\IDMustBePositiveInt;
 use app\lib\exception\BannerMissException;
-=======
->>>>>>> parent of baafd7e... 全局异常处理01
 
 class Banner{
     /**
@@ -24,7 +21,6 @@ class Banner{
     public function getBanner($id){
 
         (new IDMustBePositiveInt())->goCheck();
-<<<<<<< HEAD
 
         $banner = BannerModel::getBannerByID($id);
 
@@ -32,9 +28,6 @@ class Banner{
             throw new BannerMissException();
         }
 
-=======
-        $banner = BannerModel::getBannerByID($id);
->>>>>>> parent of baafd7e... 全局异常处理01
         return $banner;
     }
 }
